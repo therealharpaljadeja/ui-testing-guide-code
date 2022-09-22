@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { VStack, Skeleton, Flex, Spacer } from "@chakra-ui/react";
-import { CheckIcon, BellIcon } from "@chakra-ui/icons";
+import { CheckIcon, StarIcon } from "@chakra-ui/icons";
 import { Task } from "./Task";
 import { EmptyState } from "./EmptyState";
 
@@ -22,7 +22,7 @@ const LoadingTask = () => (
         <Skeleton height={4} width={6} mr={2} />
         <Skeleton height={4} width={12} />
         <Spacer />
-        <BellIcon aria-hidden="true" height={4} width={4} color="gray.200" />
+        <StarIcon aria-hidden="true" height={4} width={4} color="gray.200" />
     </Flex>
 );
 
@@ -32,11 +32,13 @@ export function TaskList({
     onTogglePinTask,
     onArchiveTask,
     onEditTitle,
+    onDeleteTask,
 }) {
     const events = {
         onTogglePinTask,
         onArchiveTask,
         onEditTitle,
+        onDeleteTask,
     };
 
     if (loading) {
@@ -80,6 +82,7 @@ TaskList.propTypes = {
     onTogglePinTask: PropTypes.func.isRequired,
     onArchiveTask: PropTypes.func.isRequired,
     onEditTitle: PropTypes.func.isRequired,
+    onDeleteTask: PropTypes.func.isRequired,
 };
 
 TaskList.defaultProps = {
