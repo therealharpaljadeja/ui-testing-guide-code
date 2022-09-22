@@ -1,6 +1,6 @@
 name: "UI Tests"
 
-on: push
+on: pull_request
 
 jobs:
     # Run interaction and accessibility tests
