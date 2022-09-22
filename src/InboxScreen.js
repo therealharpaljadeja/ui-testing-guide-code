@@ -50,7 +50,7 @@ export const InboxScreen = ({ error }) => {
                 h="75vh"
                 Icon={FrownIcon}
                 title="Oh no!"
-                subtitle="Something went wrong"
+                subtitle="404 Could not find tasks"
             />
         );
     }
